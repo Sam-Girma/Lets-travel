@@ -160,7 +160,11 @@ class Booking{
     public:
     int choiceHotel;
     int packHotel;
-    
+
+    void hotels(){
+        string hotelNo[] = {A}
+    }
+
 
 };
 
