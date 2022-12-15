@@ -1,0 +1,7 @@
+
+Customer ID: 0
+Name: Samuel
+age: 21
+gender: Male
+address: addis
+Phone number: 929038071
