@@ -5,10 +5,29 @@
 #include <string.h>
 
 using namespace std;
-// Class travelCompany(){
-//     public:
-//     string companyName;
-// }
+
+void menu();//main menu function prototype
+
+class travelCompany
+{
+protected:
+    string admin; //hide admin name
+
+public:
+
+    //virtual void menu(){}
+
+    ManageMenu()
+    {
+        system("color 0A"); //change terminal color
+        cout << "\n\n\n\n\n\n\n\n\n\t  Enter Your Name to Continue as an Admin: ";
+        cin >> admin;
+        system("CLS");
+        menu(); //call to main function to load after executing the constructr
+    }
+
+    ~ManageMenu(){} //de
+};
 
 class Customers{
     public:
@@ -158,7 +177,7 @@ class cars{
     
 class Booking{
     public:
-    int choiceHotel;
+    int  ;
     int packHotel;
 
     void hotels(){
