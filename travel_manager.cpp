@@ -526,7 +526,7 @@ int main(){
    
     TravelCompany company;
     
-    customer.showDetails();
+    // customer.showDetails();
     return 0;
 }
 
