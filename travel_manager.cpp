@@ -185,6 +185,9 @@ class Booking{
     int stdcost;
     int premium;
     int luxury;
+    int roll_number = 1;
+
+    char line[999];
 
     void addHotels(){
         ofstream out("Hotels.txt");{
@@ -197,26 +200,170 @@ class Booking{
             cout<<"Insert cost of Luxury package: ";
             cin>>luxury;
         }
-        out <<"hotel name: "<<hotelName<<" Standard cost: "<<stdcost<<"\nPremium cost: "<<premium<<"\nLuxury cost: "<<luxury<<endl;
+        out <<roll_number<<" hotel name: "<<hotelName<<" Standard cost: "<<stdcost<<" Premium cost: "<<premium<<" Luxury cost: "<<luxury<<endl;
+        roll_number+=1;
         out.close();
         cout<<"\n You have successfully registered. "<<hotelName<<" hotel."<< endl;
 
     }
+    
 
-    void hotels(){
-        ifstream in("Hotels.txt");
+     void hotels()
+    {
+        string hotelNo[] = {"Skylight", "Hilton", "Radisonblue"};
+        for(int a = 0; a < 3; a++)
         {
-            if(!in)
-            {
-                cout << "File Error!" << endl;
-            }
-            while(!(in.eof()))
-            {
-                in.getline(all, 999);
-                cout << all << endl;
-            }
-            in.close();
+            cout << (a+1) <<". Hotel " << hotelNo[a] << endl;
         }
+
+        cout << "\nCurrently we collaborated with above hotels!" << endl;
+
+        cout << "Press any key to back or\nEnter Number of the hotel you want to book or see details: ";
+        cin >> choiceHotel;
+
+        system("CLS");
+
+        if(choiceHotel == 1){
+            cout << "-------WELCOME TO HOTEL Skylight-------\n" << endl;
+
+            cout << "The Garden, food and beverage. Enjoy all you can drink, Stay cool and get chilled in the summer sun." << endl;
+
+            cout << "Packages offered by Skylight:\n" << endl;
+
+            cout << "1. Standard Pack" << endl;
+            cout << "\tAll basic facilities you need just for: birr 5000.00" << endl;
+            cout << "2. Premium Pack" << endl;
+            cout << "\tEnjoy Premium: birr 10000.00" << endl;
+            cout << "3. Luxury Pack" << endl;
+            cout << "\tLive a Luxury at Avendra: birr 15000.00" << endl;
+
+
+            cout << "\nPress another key to back or\nEnter Package number you want to book: ";
+            cin >> packChoice1;
+
+            if (packChoice1 == 1){
+                hotelCost = 5000.00;
+                cout << "\nYou have successfully booked Standard Pack at Skylight" << endl;
+                cout << "Goto Menu and take the receipt" << endl;
+            }
+            else if (packChoice1 == 2){
+                hotelCost = 10000.00;
+                cout << "\nYou have successfully booked Premium Pack at Skylight" << endl;
+                cout << "Goto Menu and take the receipt" << endl;
+            }
+            else if (packChoice1 == 3){
+                hotelCost = 15000.00;
+                cout << "\nYou have successfully booked Luxury Pack at Skylight" << endl;
+                cout << "Goto Menu to take the receipt" << endl;
+            }
+            else{
+                cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" << endl;
+                Sleep(1100);
+                system("CLS");
+                hotels();
+
+            }
+
+            cout << "\nPress 1 to Redirect Main Menu: ";
+            cin >> gotoMenu;
+            system("CLS");
+            if(gotoMenu == 1){
+                menu();
+            }
+            else{
+                menu();
+            }
+        }
+        else if(choiceHotel == 2){
+            cout << "-------WELCOME TO HOTEL Hilton-------\n" << endl;
+
+            cout << "Swimming Pool | Free WiFi | Family Rooms \n Fitness Center | Restaurant & Bar" << endl;
+
+            cout << "Packages Offered by Hilton:\n" << endl;
+
+            cout << "1. Family Pack" << endl;
+            cout << "\t birr 15000.00 for a day" << endl;
+            cout << "2. Couple Pack" << endl;
+            cout << "\t birr 10000.00 for a day" << endl;
+            cout << "3. Single Pack" << endl;
+            cout << "\t birr 5000.00 for a day" << endl;
+
+            cout << "\nPress another key to back or\nEnter Package number you want to book: ";
+            cin >> packChoice1;
+
+            if (packChoice1 == 1){
+                hotelCost = 15000.00;
+                cout << "You have successfully booked Family Pack at Hilton" << endl;
+                cout << "Goto Menu and take the receipt" << endl;
+            }
+            else if (packChoice1 == 2){
+                hotelCost = 10000.00;
+                cout << "You have successfully booked Couple Pack at Hilton" << endl;
+                cout << "Goto Menu and take the receipt" << endl;
+            }
+            else if (packChoice1 == 3){
+                hotelCost = 5000.00;
+                cout << "You have successfully booked Single Pack at Hilton" << endl;
+                cout << "Goto Menu and take the receipt" << endl;
+            }
+            else{
+                cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" << endl;
+                Sleep(1100);
+                system("CLS");
+                hotels();
+            }
+
+            cout << "\nPress 1 to Redirect Main Menu: ";
+            cin >> gotoMenu;
+            system("CLS");
+            if(gotoMenu == 1){
+                menu();
+            }
+            else{
+                menu();
+            }
+        }
+        else if(choiceHotel == 3){
+            cout << "-------WELCOME TO HOTEL Radisonblue-------\n" << endl;
+            cout << "Set in tropical gardens on the banks of the Maha Oya river While Seeing Elephants" << endl;
+            cout << "Amazing offer in this summer: birr 5000.00 for a one day!!!" << endl;
+
+            cout << "\nPress another key to back or\nPress 1 to book this special package: ";
+            cin >> packChoice1;
+
+            if (packChoice1 == 1){
+                hotelCost = 5000.00;
+                cout << "You have successfully booked Radisonblue Special Pack" << endl;
+                cout << "Goto Menu and take the receipt" << endl;
+            }
+            else{
+                cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" << endl;
+                Sleep(1100);
+                system("CLS");
+                hotels();
+            }
+            cout << "\nPress 1 to Redirect Main Menu: ";
+            cin >> gotoMenu;
+            system("CLS");
+            if(gotoMenu == 1){
+                menu();
+            }
+            else{
+                menu();
+            }
+        }
+        else{
+            cout << "Invalid Input! Redirecting to Previous Menu \nPlease Wait!" << endl;
+            Sleep(1100);
+            system("CLS");
+            menu();
+        }
+    };
+
+
+
+
+
     }
 
 
