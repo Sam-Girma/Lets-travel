@@ -8,7 +8,7 @@ using namespace std;
 
 void menu();//main menu function prototype
 
-class travelCompany
+class TravelCompany
 {
 protected:
     string admin; //hide admin name
@@ -17,16 +17,16 @@ public:
 
     //virtual void menu(){}
 
-    ManageMenu()
+    TravelCompany
     {
         system("color 0A"); //change terminal color
         cout << "\n\n\n\n\n\n\n\n\n\t  Enter Your Name to Continue as an Admin: ";
         cin >> admin;
         system("CLS");
         menu(); //call to main function to load after executing the constructr
-    }
+    };
 
-    ~ManageMenu(){} //de
+    ~TravelCompany{} ;//de
 };
 
 class Customers{
@@ -177,11 +177,46 @@ class cars{
     
 class Booking{
     public:
-    int  ;
-    int packHotel;
+    int  choiceHotel, packChoice;
+    int gotoMenu;
+    static float hotelCost;
+
+    string hotelName;
+    int stdcost;
+    int premium;
+    int luxury;
+
+    void addHotels(){
+        ofstream out("Hotels.txt");{
+            cout<<"Insert hotel Name: ";
+            cin>>hotelName;
+            cout<<"Insert cost of standard package: ";
+            cin>>stdcost;
+            cout<<"Insert cost of premium package: ";
+            cin>>premium;
+            cout<<"Insert cost of Luxury package: ";
+            cin>>luxury;
+        }
+        out <<"hotel name: "<<hotelName<<" Standard cost: "<<stdcost<<"\nPremium cost: "<<premium<<"\nLuxury cost: "<<luxury<<endl;
+        out.close();
+        cout<<"\n You have successfully registered. "<<hotelName<<" hotel."<< endl;
+
+    }
 
     void hotels(){
-        string hotelNo[] = {A}
+        ifstream in("Hotels.txt");
+        {
+            if(!in)
+            {
+                cout << "File Error!" << endl;
+            }
+            while(!(in.eof()))
+            {
+                in.getline(all, 999);
+                cout << all << endl;
+            }
+            in.close();
+        }
     }
 
 
